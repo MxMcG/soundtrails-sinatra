@@ -1,0 +1,7 @@
+<h3>Map created by <%= map.user.username %></h3>
+<h3>Artist: <%= map.artist %></h3>
+<form action="/maps/<%= map.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this map">
+</form>
+<div id="map"></div>

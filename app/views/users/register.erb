@@ -1,0 +1,39 @@
+<div id="register-login-wrapper">
+  <div class="register-form">
+    <a href="/">Home</a>
+    <h2>Register</h2>
+
+    <form action="/register" method="post">
+
+      <% if @form_error %>
+      <div style="color: red;"><%= @form_error %></div>
+      <% end %>
+
+      <% if @user.errors[:email].any? %>
+        <div style="color: red;"><%= @user.errors[:email].first %></div>
+      <% end %>
+        <input name="email" type="text" class="validate" value="<%= @user.email %>" placeholder="email"><br>
+
+      <% if @user.errors[:username].any? %>
+        <div style="color: red;"><%= @user.errors[:username].first %></div>
+      <% end %>
+        <input name="username" type="text" class="validate" value="<%= @user.username %>" placeholder="username"><br>
+
+      <% if @user.errors[:password].any? %>
+        <div style="color: red;"><%= @user.errors[:password].first %></div>
+      <% end %>
+        <input name="password" type="password" class="validate" value="" placeholder="password"><br>
+
+      <% if @user.errors[:password_confirmation].any? %>
+        <div style="color: red;"><%= @user.errors[:password_confirmation].first %></div>
+      <% end %>
+
+        <input name="password_confirmation" type="password" class="validate" value="" placeholder="confirmation"><br>
+
+      <input class="btn" type="submit" name="action" value="Register"/><br>
+      <a class="cancel-btn" href="/">Cancel<a/>
+
+    </form>
+
+  </div>
+</div>

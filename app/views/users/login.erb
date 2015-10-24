@@ -1,0 +1,14 @@
+<div id="register-login-wrapper">
+  <div class="login-form">
+    <a href="/">Home</a>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+      <% if @form_error %>
+      <div><%= @form_error %></div>
+      <% end %>
+        <input name="username" type="text" class="validate" placeholder="username">
+        <input name="password" type="password" class="validate" placeholder="password">
+        <input class="btn" type="submit" name="action" value="Login">
+    </form>
+  </div>
+</div>
